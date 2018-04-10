@@ -7,10 +7,14 @@
 
     <h2><strike><%= link_to activity.title, activity_path(activity) %></strike></h2>
   <% else %>
-    <h2><%= link_to activity.title, activity_path(activity) %></h2>
-    <%= link_to "Check", complete_activity_path(activity), :method=> 'patch' %>
+    <h2><%= link_to activity.title, activity_path(activity) %></h2> - <%= link_to "Check", complete_activity_path(activity), :method=> 'patch' %>
+
+    <p><%= activity.description %></p>
+    <p><%= activity.directions %></p>
+    <p><%= activity.schedule %></p>
+    <p><%= activity.link %></p>
   <% end %>
-  <p><%= activity.description %></p>
+
 
 </div>
 <% end %>

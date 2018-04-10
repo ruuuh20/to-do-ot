@@ -54,7 +54,7 @@ class ActivitiesController < ApplicationController
 
 private
   def activity_params
-    params.require(:activity).permit(:title, :description)
+    params.require(:activity).permit(:title, :description, :status, :directions, :schedule, :link)
   end
 
   def set_activity

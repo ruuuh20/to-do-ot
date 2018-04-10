@@ -1,5 +1,28 @@
 <%= form_for @activity do |f| %>
-  <%= f.text_field :title %>
-  <%= f.text_field :description %>
-  <%= f.submit "Submit" %>
+  <div class="field">
+    <%= f.label "Activity" %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Description" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Instructions" %>
+    <%= f.text_area :directions %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Schedule" %>
+    <%= f.text_area :schedule %>
+  </div>
+  <div class="field">
+    <%= f.label "Link to Purchase" %>
+    <%= f.text_field :link %>
+  </div>
+
+
+  <%= f.submit "Add" %>
 <% end  %>

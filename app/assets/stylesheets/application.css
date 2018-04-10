@@ -17,14 +17,14 @@
 
 *{
    margin: 10px;
-  text-align: center;
+
 
 
  }
 
  .card {
    border: 1px solid #eb7f4e;
-   width: 30%;
+   width: 50%;
    padding: 10px;
    margin: auto;
 
@@ -50,4 +50,28 @@ h2 {
 a {
   text-decoration: none;
   color: #eb7f4e;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #70a35e;
+
+}
+.nav-item {
+    float: left;
+}
+
+.nav-item a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+form {
+  margin: auto
 }
