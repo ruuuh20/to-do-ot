@@ -1,4 +1,3 @@
-require 'pry'
 
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
@@ -15,7 +14,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
-    # binding.pry
+
     if @activity.save
 
       redirect_to activities_path
