@@ -1,8 +1,11 @@
+require 'pry'
+
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
     @activities = Activity.all.order("created_at DESC")
+    @activity = Activity.new
   end
 
 
@@ -12,7 +15,9 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.new(activity_params)
+    # binding.pry
     if @activity.save
+
       redirect_to root_path
     else
       render 'new'
@@ -35,6 +40,12 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
+    redirect_to root_path
+  end
+
+  def complete
+    @activity = Activity.find(params[:id])
+    @activity.update_attribute(:status, true)
     redirect_to root_path
   end
 

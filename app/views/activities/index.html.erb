@@ -1,7 +1,21 @@
+
 <% @activities.each do |activity| %>
-  <h2><%= link_to activity.title, activity_path(activity) %></h2>
+<div class="card">
+
+
+  <% if activity.completed? %>
+
+    <h2><strike><%= link_to activity.title, activity_path(activity) %></strike></h2>
+  <% else %>
+    <h2><%= link_to activity.title, activity_path(activity) %></h2>
+    <%= link_to "Check", complete_activity_path(activity), :method=> 'patch' %>
+  <% end %>
   <p><%= activity.description %></p>
+
+</div>
 <% end %>
 
+<div class="row">
+  <%= render 'form' %>
 
-<%= link_to "New", new_activity_path %>
+</div>
