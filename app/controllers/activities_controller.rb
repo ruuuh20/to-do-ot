@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_action :set_activity, only: :show
+  before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
     @activities = Activity.all.order("created_at DESC")
@@ -20,6 +20,22 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+  end
+
+  def edit
+  end
+
+  def update
+    if @activity.update(activity_params)
+      redirect_to activity_path(@activity)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @activity.destroy
+    redirect_to root_path
   end
 
 

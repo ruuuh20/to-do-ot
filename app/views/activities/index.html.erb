@@ -1,4 +1,7 @@
 <% @activities.each do |activity| %>
-  <h2><%= activity.title %></h2>
+  <h2><%= link_to activity.title, activity_path(activity) %></h2>
   <p><%= activity.description %></p>
 <% end %>
+
+
+<%= link_to "New", new_activity_path %>
