@@ -1,3 +1,8 @@
+<div class="row">
+  <%= link_to "ADD NEW ACTIVITY", new_activity_path, :class => "add-button" %>
+
+</div>
+<br>
 
 <% @activities.each do |activity| %>
 <div class="card">
@@ -7,7 +12,7 @@
 
     <h2><strike><%= link_to activity.title, activity_path(activity) %></strike></h2>
   <% else %>
-    <h2><%= link_to activity.title, activity_path(activity) %></h2> - <%= link_to "Check", complete_activity_path(activity), :method=> 'patch' %>
+    <h2><%= link_to activity.title, activity_path(activity) %> <%= button_to "Complete", complete_activity_path(activity), :method=> 'patch', :class => "check-button" %></h2>
 
     <p><%= activity.description %></p>
     <p><%= activity.directions %></p>
@@ -18,8 +23,3 @@
 
 </div>
 <% end %>
-
-<div class="row">
-  <%= render 'form' %>
-
-</div>

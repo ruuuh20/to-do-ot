@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     end
   end
 
-  root 'activities#index'
+  root 'static_pages#home'
   # patch '/activities/:id/complete' => 'activities#complete'
 end

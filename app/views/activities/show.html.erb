@@ -1,5 +1,8 @@
 <h2><%= link_to @activity.title %></h2>
 <h4><%= @activity.description %></h4>
+<p>Instructions: <%= @activity.directions %></p>
+<p>How often: <%= @activity.schedule %></p>
+<p>Link to purchase: <%= @activity.link %></p>
 
 <%= link_to "Go Back", root_path %>
 <%= link_to "Edit", edit_activity_path(@activity) %>

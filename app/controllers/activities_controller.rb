@@ -18,7 +18,7 @@ class ActivitiesController < ApplicationController
     # binding.pry
     if @activity.save
 
-      redirect_to root_path
+      redirect_to activities_path
     else
       render 'new'
     end
@@ -40,13 +40,13 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to root_path
+    redirect_to :index
   end
 
   def complete
     @activity = Activity.find(params[:id])
     @activity.update_attribute(:status, true)
-    redirect_to root_path
+    redirect_to :index
   end
 
 
@@ -54,7 +54,7 @@ class ActivitiesController < ApplicationController
 
 private
   def activity_params
-    params.require(:activity).permit(:title, :description, :status, :directions, :schedule, :link)
+    params.require(:activity).permit(:title, :description, :directions, :schedule, :link)
   end
 
   def set_activity

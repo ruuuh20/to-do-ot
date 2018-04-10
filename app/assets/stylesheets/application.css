@@ -36,6 +36,8 @@
   border: 2px #02b0a6;
 
   margin: auto;
+  padding: 20px;
+  height: 100px;
 
 }
 
@@ -64,9 +66,10 @@ ul {
     float: left;
 }
 
-.nav-item a {
+.nav-item {
     display: block;
     color: white;
+
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -74,4 +77,23 @@ ul {
 
 form {
   margin: auto
+}
+
+.home-button {
+  width: 200px;
+  height: 100px;
+  color: #02b0a6;
+  background-color: #f7e583;
+
+}
+
+.check-button {
+  background-color: #f7e583;
+}
+
+.add-button {
+  background-color: #f7e583;
+  width: 200px;
+  border: 1px solid #02b0a6;
+
 }
