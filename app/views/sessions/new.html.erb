@@ -1,6 +1,7 @@
 <h1>Log In</h1>
 <%= form_tag(sessions_path) do %>
-  <%= text_field_tag :name, '', :placeholder => 'Log in with you name' %>
+  <%= text_field_tag :name, '', :placeholder => 'Log in with your name' %>
+  <%= text_field_tag :password, '', :placeholder => 'Password' %>
   <%= submit_tag "Log In" %>
 
 <% end %>
