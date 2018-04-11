@@ -12,8 +12,14 @@
 
     <nav class="nav">
       <ul>
-        <%= link_to "Home", root_path, :class => "nav-item" %>
-        
+        <li><%= link_to "Home", root_path, :class => "nav-item" %><li>
+          <% if current_user %>
+            <li><%= link_to "Log Out", logout_path, :class => "nav-item" %></li>
+            <li class="nav-item">Hi, <%= current_user.name %></li>
+          <% end %>
+
+
+
       </ul>
 
     </nav>

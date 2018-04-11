@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   end
 
   root 'static_pages#home'
+  resources :users
+  get '/login'=> 'sessions#new'
+  post '/sessions' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
   # patch '/activities/:id/complete' => 'activities#complete'
 end

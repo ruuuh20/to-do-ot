@@ -1,5 +1,6 @@
 
 class ActivitiesController < ApplicationController
+  before_action :authentication_required
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -39,13 +40,13 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity.destroy
-    redirect_to :index
+    redirect_to activities_path
   end
 
   def complete
     @activity = Activity.find(params[:id])
     @activity.update_attribute(:status, true)
-    redirect_to :index
+    redirect_to activity_path
   end
 
 
