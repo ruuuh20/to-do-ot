@@ -18,16 +18,22 @@
 
 *{
   font-family: 'Source Sans Pro', sans-serif;
-   margin: 10px;
+   /* margin: 10px; */
   box-sizing: border-box;
  }
 
- .column1 {
+ .column {
    float: left;
    width: 50%;
+   height: 100vh;
+   text-align: center;
+ }
+
+ .column1 {
+   background-color: #176057
  }
  .column2 {
-  width: 50%;
+  background-color: #F99E0D
  }
 
 
@@ -76,10 +82,15 @@ form {
 }
 
 .home-button {
-  width: 200px;
-  height: 100px;
-  color: #02b0a6;
-  background-color: #f7e583;
+  /* text-align: center; */
+  font-size: 5em;
+
+  /* color: #02b0a6; */
+  color: #eee;
+  /* background-color: #f7e583; */
+  position: relative;
+top: 40%;
+transform: translateY(-50%);
 
 }
 
