@@ -1,0 +1,24 @@
+<h1>Sign up</h1>
+<%= form_for @therapist do |f| %>
+
+<div class="field">
+  <%= f.label :code %>
+  <%= f.text_field :code %>
+</div>
+
+<%= f.fields_for :user_attributes, @therapist.user || User.new do |ff| %>
+  <div class="field">
+    <%= ff.label :name  %>
+    <%= ff.text_field :name  %>
+  </div>
+  <div class="field">
+    <%= ff.label :password  %>
+    <%= ff.text_field :password  %>
+  </div>
+<% end %>
+
+
+
+<%= f.submit "Sign Up" %>
+
+<% end %>

@@ -6,9 +6,11 @@ class TherapistsController < ApplicationController
 
   def create
     @therapist = Therapist.create(therapist_params)
+    #from google, this "solves" the problem but is not a good solution!
+    @therapist.user.meta = @therapist
     if @therapist.save
       session[:user_id] = @therapist.id
-      redirect_to activities_path
+      redirect_to appointments_path
     else
       # binding.pry
       render :new
@@ -18,6 +20,6 @@ class TherapistsController < ApplicationController
 
   private
   def therapist_params
-    params.require(:therapist).permit(:code, user_attributes: [:id, :name, :password])
+    params.require(:therapist).permit(:code, user_attributes: [:name, :password])
   end
 end

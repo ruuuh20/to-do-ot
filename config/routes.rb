@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   end
   resources :clients
   resources :appointments
+  resources :therapists
 
   root 'static_pages#home'
   resources :users
