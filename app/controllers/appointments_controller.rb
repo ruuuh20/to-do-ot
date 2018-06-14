@@ -14,7 +14,6 @@ class AppointmentsController < ApplicationController
     @appointment = Appointment.new(appointment_params)
 
     if @appointment.save
-
       redirect_to appointments_path
     else
       render 'new'
