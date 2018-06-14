@@ -1,3 +1,5 @@
+require 'pry'
+
 class UsersController < ApplicationController
 
   def new
@@ -10,6 +12,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to activities_path
     else
+      # binding.pry
       render :new
     end
 

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       patch :complete
     end
   end
+  resources :clients
+  resources :appointments
 
   root 'static_pages#home'
   resources :users

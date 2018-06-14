@@ -1,7 +1,7 @@
-class AppointmentController < ApplicationController
+class AppointmentsController < ApplicationController
 
   def index
-    @appointments_path = Appointment.all.order("created_at DESC")
+    @my_appointments = current_user.appointments.all.order("created_at DESC")
     @appointment = Appointment.new
   end
 
