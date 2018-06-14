@@ -4,21 +4,26 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
 
   def index
-    @activities = Activity.all.order("created_at DESC")
+    # @activities = Activity.all.order("created_at DESC")
+      @appointment = Appointment.find(params[:appointment_id])
+    @activities = @appointment.activities
     @activity = Activity.new
   end
 
 
   def new
+      @appointment = Appointment.find(params[:appointment_id])
     @activity = Activity.new
+
   end
 
   def create
-    @activity = Activity.new(activity_params)
+    @appointment = Appointment.find(params[:appointment_id])
+    @activity = @appointment.activities.build(activity_params)
 
     if @activity.save
 
-      redirect_to activities_path
+      redirect_to appointment_activities_path(@appointment)
     else
       render 'new'
     end

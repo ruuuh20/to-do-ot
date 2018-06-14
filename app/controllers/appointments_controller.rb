@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :set_appointment, only: [:show, :edit, :update, :destroy]
 
   def index
     @my_appointments = current_user.meta.appointments.all.order("created_at DESC")
@@ -26,6 +27,7 @@ class AppointmentsController < ApplicationController
   end
 
   def show
+    @activities = @appointment.activities
   end
 
   def edit

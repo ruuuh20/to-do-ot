@@ -1,9 +1,18 @@
-<h2><%= link_to @activity.title %></h2>
-<h4><%= @activity.description %></h4>
-<p>Instructions: <%= @activity.directions %></p>
-<p>How often: <%= @activity.schedule %></p>
-<p>Link to purchase: <%= @activity.link %></p>
+<div class="container">
+  <div class="row">
 
-<%= link_to "Go Back", root_path %>
+    <h2><%= link_to @activity.title %></h2>
+    <h4><%= @activity.description %></h4>
+    <p>Instructions: <%= @activity.directions %></p>
+    <p>How often: <%= @activity.schedule %></p>
+    <p>Link to purchase: <%= @activity.link %></p>
+
+  </div>
+
+
+</div>
+
+
+<%= link_to 'Back', url_for(:back) %>
 <%= link_to "Edit", edit_activity_path(@activity) %>
 <%= link_to "Delete", activity_path(@activity), :method => :delete, :data => { confirm: "Delete?"} %>

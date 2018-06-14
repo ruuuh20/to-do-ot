@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     end
   end
   resources :clients
-  resources :appointments
+  resources :appointments do
+    resources :activities
+  end
+
   resources :therapists
 
   root 'static_pages#home'

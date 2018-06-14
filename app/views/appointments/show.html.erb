@@ -1,0 +1,21 @@
+<%= link_to "ADD NEW ACTIVITY", new_appointment_activity_path(@appointment, @activity), :class => "add-button" %>
+
+<% @activities.each do |activity| %>
+<div class="card">
+
+
+  <% if activity.completed? %>
+
+    <h2><strike><%= link_to activity.title, activity_path(activity) %></strike></h2>
+  <% else %>
+    <h2><%= link_to activity.title, activity_path(activity) %> <%= button_to "Complete", complete_activity_path(activity), :method=> 'patch', :class => "check-button" %></h2>
+
+    <p><%= activity.description %></p>
+    <p><%= activity.directions %></p>
+    <p><%= activity.schedule %></p>
+    <p><%= activity.link %></p>
+  <% end %>
+
+
+</div>
+<% end %>

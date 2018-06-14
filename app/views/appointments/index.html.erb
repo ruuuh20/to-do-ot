@@ -8,10 +8,14 @@
 
 
 <% @all_appointments.each do |appt| %>
-  <div class="appt-card">
+  <%= link_to appointment_path(appt) do %>
+    <div class="appt-card">
+
 
       <p><%= appt.id %>: <%= appt.date %></p>
       <p><%= appt.status %></p>
-  </div>
+
+    </div>
+  <% end %>
 
 <% end  %>
