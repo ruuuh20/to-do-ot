@@ -1,3 +1,17 @@
 <h1>Upcoming Appointments</h1>
 
 <%= link_to "Add new", new_appointment_path, :class => "new-appt" %>
+
+<% @my_appointments.each do |appt| %>
+  <p><%= appt.date %></p>
+<% end  %>
+
+
+<% @all_appointments.each do |appt| %>
+  <div class="appt-card">
+
+      <p><%= appt.id %>: <%= appt.date %></p>
+      <p><%= appt.status %></p>
+  </div>
+
+<% end  %>

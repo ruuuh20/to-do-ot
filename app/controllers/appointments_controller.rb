@@ -2,22 +2,27 @@ class AppointmentsController < ApplicationController
 
   def index
     @my_appointments = current_user.meta.appointments.all.order("created_at DESC")
-    @appointment = Appointment.new
+    @all_appointments = Appointment.all
   end
 
 
   def new
     @appointment = Appointment.new
+    therapist = @appointment.build_therapist
+    client = @appointment.build_client
   end
 
   def create
     @appointment = Appointment.new(appointment_params)
-
-    if @appointment.save
+    # raise params.inspect
+    @appointment.client = Client.find(params[:appointment][:client_id])
+    @appointment.therapist = Therapist.find(params[:appointment][:therapist_id])
+    # binding.pry
+    @appointment.save
       redirect_to appointments_path
-    else
-      render 'new'
-    end
+
+    #   render 'new'
+    # end
   end
 
   def show
@@ -50,7 +55,7 @@ class AppointmentsController < ApplicationController
 
   private
   def appointment_params
-    params.require(:appointment).permit(:date, :status)
+    params.require(:appointment).permit(:therapist_id, :client_id, :date, :status)
   end
 
   def set_appointment
