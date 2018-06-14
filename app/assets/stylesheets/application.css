@@ -64,13 +64,13 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #70a35e;
+    /* background-color: #70a35e; */
 
 }
 
 .nav-item {
-    display: inline;
-    color: white;
+  float: left;
+    color: #70a35e  ;
 
     text-align: center;
     padding: 14px 16px;
@@ -98,9 +98,20 @@ transform: translateY(-50%);
   background-color: #f7e583;
 }
 
+
+/* ACTIVITIES */
+.activity-row {
+  text-align: center;
+}
+
+.activity-row p {
+  float: right;
+}
 .add-button {
   background-color: #f7e583;
+  padding: 15px;
+  box-sizing: border-box;
   width: 200px;
-  border: 1px solid #02b0a6;
+
 
 }
